@@ -1,10 +1,5 @@
 import { memo } from 'react';
-import HeroImg from '../../assets/hero1.jpg'
-import Landing from '../../assets/landing.jpg'
-import About from '../../assets/about.png'
-import HeavyMachine2 from '../../assets/machine7.jpeg'
-import PrimaryButton from '../buttons/PrimaryButton';
-
+   import HeavyMachine2 from '../../assets/machine7.jpeg'
 const AboutHero = () => {
     return (<div className="relative h-[500px] w-full flex flex-col items-center justify-center overflow-hidden">
         <img
