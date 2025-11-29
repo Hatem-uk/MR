@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+
+
+@layer base {
+  html {
+    font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    letter-spacing: 0;
+    line-height: 100%;
+  }
+}
+
+@theme{
+  --color-primary: #FFFFFF;
+  --color-primaryBtn: #1F6FEB;
+  --color-secondary: #F6C90E;
+  --color-navColor: #0A2540;
+  --color-equipmentBg: rgba(244, 245, 247, 1)
+
+  /* Animation */
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2s forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4s forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6s forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8s forwards;
+}
+
+@keyframes border-spin {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-border-spin {
+  background-size: 300% 300%;
+  animation: border-spin 4s linear infinite;
+}
+
+/* Page fade-in used when route content changes */
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-page-fade {
+  animation: fade-in 300ms ease-in-out both;
+}
+
+/* Convert @theme variables to :root if still present (defensive) */
+@supports ( --custom: 0 ) {
+  :root {
+    /* keep CSS variables for legacy usage if any */
+    --color-primary: #FFFFFF;
+    --color-primaryBtn: #1F6FEB;
+    --color-secondary: #F6C90E;
+    --color-navColor: #0A2540;
+    --color-equipmentBg: rgba(244, 245, 247, 1);
+  }
+}
+
+.slide-enter {
+  opacity: 0;
+  transform: translateX(40px);
+}
+.slide-enter {
+  opacity: 0;
+  transform: translateX(40px);
+}
+
+.slide-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 0.8s ease;
+}
+
+.slide-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-exit-active {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: all 0.8s ease;
+}
+
+
